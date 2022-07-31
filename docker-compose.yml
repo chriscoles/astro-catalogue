@@ -1,0 +1,15 @@
+version: '3.2'
+
+services:
+  mssql-learning:
+    image: mssql-learning
+    container_name: mssql-learning
+    build: .
+    ports:
+      - "1433:1433"
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "My_Password1"
+    volumes:
+      - ./mssql-server-data:/var/opt/mssql
+
