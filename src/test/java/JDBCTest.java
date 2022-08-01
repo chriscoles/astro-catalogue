@@ -13,7 +13,7 @@ public class JDBCTest {
         String jdbcUrl = "jdbc:sqlserver://localhost\\88b2dd66de36:1433;database=ASTRO;encrypt=true;trustServerCertificate=true;";
 
         String username = "sa";
-        String password = "Fatfrog99";
+        String password = "My_Password1";
         try{
             Connection conn = DriverManager.getConnection(jdbcUrl, username, password);
             assertNotNull(conn);
