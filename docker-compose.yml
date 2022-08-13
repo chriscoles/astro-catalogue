@@ -1,10 +1,10 @@
 version: '3.2'
 
 services:
-  mssql-learning:
-    image: mssql-learning
-    container_name: mssql-learning
-    build: .
+  astro-db-mssql:
+    image: astro-db-mssql
+    container_name: astro-db-mssql
+    build: ./db-mssql
     ports:
       - "1433:1433"
     environment:
