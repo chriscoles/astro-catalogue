@@ -4,7 +4,12 @@ import axios from "axios";
 
 function Table(props) {
     const [results, setResults] = useState([]);
-    axios.get(props.url)
+
+
+    axios.get(props.url,  {auth: {
+      username: 'user',
+      password: 'password'
+    }})
     .then(response => setResults(response.data))
     .catch(error => console.log(error));
   
@@ -25,7 +30,7 @@ function Table(props) {
               <tbody>
                 {results.map(function (row, i) {
                   return (
-                    <tr key={row.id}>
+                    <tr>
                       {Object.values(row).map(function (element, i) {
                       return (
                         <td>{element}</td>

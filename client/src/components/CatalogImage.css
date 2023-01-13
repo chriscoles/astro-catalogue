@@ -1,0 +1,11 @@
+.outline-catalog-image {
+    background-color: #424242;
+    color: #000000;
+    padding: 5px;
+    margin: 5px;
+}
+
+.image{
+    height: 100%;
+    width: 100%;
+}

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-/opt/mssql/bin/sqlservr
+#/opt/mssql/bin/sqlservr
 
 # Wait for the MSSQL Server to initialize
 echo "Waiting for connection to MSSQL Server"
@@ -14,9 +14,13 @@ echo "Connected SQL Server"
 echo "Creating ASTRO DB"
 /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P ${SA_PASSWORD} -Q "CREATE DATABASE ASTRO"
 
-# Run a SQL script to initialize the DB
-echo "Initialising ASTRO DB"
-/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P ${SA_PASSWORD} -i "init.sql"
+# Run a SQL script to initialize the Messier Catalog
+echo "Initialising Messier Catalog"
+/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P ${SA_PASSWORD} -i "initMessier.sql"
+
+# Run a SQL script to initialize the NGC Catalog
+echo "Initialising NGC Catalog"
+/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P ${SA_PASSWORD} -i "initNGC.sql"
 
 echo "Finished Initialising"
 

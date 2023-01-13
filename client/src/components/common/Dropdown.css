@@ -1,0 +1,9 @@
+.custom-select {
+    width: 300px;
+    height: 30px;
+    border: 1px solid #999;
+    font-size: 18px;
+    color: #000000;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+  }

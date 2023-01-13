@@ -12,4 +12,22 @@ services:
       SA_PASSWORD: "My_Password1"
     volumes:
       - ./mssql-server-data:/var/opt/mssql
+    networks:
+      - astro
+  
+  astro-catalog-server:
+    image: astro-catalog-server
+    container_name: astro-catalog-server
+    build: ./catalog-server
+    ports:
+      - "8081:8080"
+    environment:
+      - database=jdbc:sqlserver://172.18.0.1:1433
+    depends_on:
+      - astro-db-mssql
+    networks:
+      - astro
+
+networks:
+  astro:
 
